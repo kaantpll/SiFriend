@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "953498608444",
+    "project_id": "groupapp-64d25",
+    "storage_bucket": "groupapp-64d25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953498608444:android:b5e45b78160f6145393439",
+        "android_client_info": {
+          "package_name": "com.example.sifriend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953498608444-np2fhuhav0884ggd9laq7shpi2g8hjem.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOfmKeFLRo-n8RaKrDDxx1nEIw4zN3Fp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953498608444-np2fhuhav0884ggd9laq7shpi2g8hjem.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
