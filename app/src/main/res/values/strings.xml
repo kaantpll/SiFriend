@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SiFriend</string>
+    <string name="bildirim">Bildirim</string>
+    <string name="eco">Eco</string>
 </resources>
