@@ -22,5 +22,13 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.example.sifriend.view.FavoriteFragment"
-        android:label="FavoriteFragment" />
+        android:label="FavoriteFragment" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_fireFragment"
+            app:destination="@id/fireFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fireFragment"
+        android:name="com.example.sifriend.view.FireFragment"
+        android:label="FireFragment" />
 </navigation>

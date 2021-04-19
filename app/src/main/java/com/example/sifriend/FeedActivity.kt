@@ -3,11 +3,14 @@ package com.example.sifriend
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
+import com.example.sifriend.view.FavoriteFragment
+import com.example.sifriend.view.FireFragment
 import com.example.sifriend.view.HomeFragment
 import com.example.sifriend.view.SearchFragment
 import com.google.android.material.appbar.MaterialToolbar
@@ -24,9 +27,6 @@ class FeedActivity : AppCompatActivity() {
         toolbar = MaterialToolbar(this)
         setSupportActionBar(toolbar)
 
-
-
-
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.bell -> {
@@ -35,6 +35,12 @@ class FeedActivity : AppCompatActivity() {
                 }
                 R.id.search ->{
 
+                    true
+                }
+                R.id.favorite ->{
+                    true
+                }
+                R.id.fire -> {
                     true
                 }
 
@@ -53,6 +59,15 @@ class FeedActivity : AppCompatActivity() {
 
                     true
                 }
+                R.id.favorite ->{
+                    replaceFragment(FavoriteFragment())
+                    true
+                }
+                R.id.fire -> {
+                    replaceFragment(FireFragment())
+
+                    true
+                }
                 else ->{
                     false
                 }
@@ -64,4 +79,6 @@ class FeedActivity : AppCompatActivity() {
         transaction.replace(R.id.fragment, fragment)
         transaction.commit()
     }
+
+
 }

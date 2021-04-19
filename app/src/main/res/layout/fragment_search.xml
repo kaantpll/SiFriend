@@ -21,7 +21,6 @@
         android:layout_width="398dp"
         android:layout_height="662dp"
         android:padding="5dp"
-        android:margin="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
