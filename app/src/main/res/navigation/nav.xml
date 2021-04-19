@@ -14,5 +14,13 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.sifriend.view.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.sifriend.view.FavoriteFragment"
+        android:label="FavoriteFragment" />
 </navigation>
