@@ -27,6 +27,8 @@ class FeedActivity : AppCompatActivity() {
         toolbar = MaterialToolbar(this)
         setSupportActionBar(toolbar)
 
+
+
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.bell -> {
