@@ -44,7 +44,6 @@
             android:layout_width="match_parent"
             android:layout_height="74dp"
             android:inputType="textPassword"
-
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -55,15 +54,15 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="40dp"
+
         android:backgroundTint="@color/teal_700"
         android:text="Sign Up"
 
         app:icon="@drawable/ic_baseline_check_circle_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField2"
+        app:layout_constraintEnd_toEndOf="@+id/signInBtn"
+        app:layout_constraintStart_toStartOf="@+id/signInBtn"
+        app:layout_constraintTop_toBottomOf="@+id/signInBtn"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -71,14 +70,39 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="@color/teal_200"
-        android:text="Sign In"
+        android:layout_marginTop="132dp"
 
+        android:backgroundTint="@color/teal_200"
+
+
+        android:text="Sign In"
         app:icon="@drawable/ic_baseline_check_circle_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpBtn"
+        app:layout_constraintEnd_toEndOf="@+id/nicknameText"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="@+id/age_text"
+        app:layout_constraintTop_toBottomOf="@+id/textField2"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/age_text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        android:hint="Age"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/textField2"
+        app:layout_constraintTop_toBottomOf="@+id/textField2"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/nicknameText"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:hint="Nickname"
+        app:layout_constraintEnd_toEndOf="@+id/textField2"
+        app:layout_constraintTop_toBottomOf="@+id/textField2"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
