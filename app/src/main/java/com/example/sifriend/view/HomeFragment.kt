@@ -3,20 +3,24 @@ package com.example.sifriend.view
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sifriend.AddActivity
 import com.example.sifriend.R
 import com.example.sifriend.adapters.HomeAdapter
 import com.example.sifriend.databinding.FragmentHomeBinding
+import com.example.sifriend.listeners.ClickCardComponent
 import com.example.sifriend.model.Post
+import com.example.sifriend.utils.OnItemClickListener
+import com.example.sifriend.utils.addOnItemClickListener
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment(R.layout.fragment_home){
 
     private var fragmentBinding : FragmentHomeBinding? =null
     private var mAuth : FirebaseAuth = FirebaseAuth.getInstance()
@@ -33,10 +37,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
         binding.rv.adapter = adapter
 
+        binding.rv.addOnItemClickListener(object :OnItemClickListener{
+            override fun onItemClicked(position: Int, view: View) {
+               position
+            }
+
+        })
+
         getAllPost()
     }
 
-    fun getAllPost(){
+    private fun getAllPost(){
         db.collection("Posts").orderBy("date", Query.Direction.DESCENDING).addSnapshotListener{ snapshot, exception ->
 
 
@@ -64,4 +75,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         }
     }
+
+
 }
