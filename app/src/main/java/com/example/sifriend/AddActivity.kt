@@ -37,25 +37,6 @@ class AddActivity : AppCompatActivity() {
     var selectedBitmap : Bitmap? = null
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
-        val menuInflater = menuInflater
-        menuInflater.inflate(R.menu.menu_add,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when(item.itemId){
-            R.id.addPostMenu ->{
-                val intent = Intent(this,AddActivity::class.java)
-                startActivity(intent)
-                true
-            }
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

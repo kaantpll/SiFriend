@@ -3,6 +3,7 @@ package com.example.sifriend
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -20,13 +21,29 @@ import kotlinx.android.synthetic.main.activity_feed.*
 
 class FeedActivity : AppCompatActivity() {
     private lateinit var toolbar : MaterialToolbar
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+         menuInflater.inflate(R.menu.menu_add,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.addPostMenu){
+            Toast.makeText(this,"Tıklandi",Toast.LENGTH_SHORT).show()
+            val intentGotoAddPage = Intent(this,AddActivity::class.java)
+            startActivity(intentGotoAddPage)
+        }
+
+        return true
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
 
-        toolbar = MaterialToolbar(this)
+        toolbar = findViewById(R.id.topAppBar)
         setSupportActionBar(toolbar)
-
 
 
         BottomNavigationView.OnNavigationItemSelectedListener { item ->

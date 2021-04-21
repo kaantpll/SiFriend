@@ -24,6 +24,7 @@
             android:layout_marginTop="16dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toStartOf="@+id/sendMessage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
@@ -32,13 +33,14 @@
             android:id="@+id/card_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="20dp"
             android:text="Emilia Clarke"
             android:textColor="@color/black"
             android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/card_image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="201dp" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/card_"
@@ -106,11 +108,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:textColor="@color/white"
-
             android:layout_marginBottom="16dp"
+
             android:background="@drawable/button_call_background"
             android:text="call"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="MissingConstraints" />
