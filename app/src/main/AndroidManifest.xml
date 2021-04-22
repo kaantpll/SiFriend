@@ -3,8 +3,9 @@
     package="com.example.sifriend">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SiFriend"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".AddActivity" />
         <activity android:name=".view.SettingsActivity" />
         <activity android:name=".view.EditProfileActivity" />
         <activity android:name=".FeedActivity" />

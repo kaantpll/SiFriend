@@ -6,13 +6,11 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sifriend.ChatActivity
 import com.example.sifriend.R
 import com.example.sifriend.model.Post
-import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseUser
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.card_item.view.*
 
@@ -37,7 +35,8 @@ class HomeAdapter(var list : ArrayList<Post>): RecyclerView.Adapter<HomeAdapter.
             it.context.startActivity(intent)
         }
         holder.view.sendMessage.setOnClickListener {
-
+            val intent = Intent(it.context,ChatActivity::class.java)
+            it.context.startActivity(intent)
         }
 
     }

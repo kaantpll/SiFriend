@@ -10,7 +10,6 @@ import com.example.sifriend.AddActivity
 import com.example.sifriend.R
 import com.example.sifriend.adapters.HomeAdapter
 import com.example.sifriend.databinding.FragmentHomeBinding
-import com.example.sifriend.listeners.ClickCardComponent
 import com.example.sifriend.model.Post
 import com.example.sifriend.utils.OnItemClickListener
 import com.example.sifriend.utils.addOnItemClickListener
@@ -36,14 +35,14 @@ class HomeFragment : Fragment(R.layout.fragment_home){
 
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
         binding.rv.adapter = adapter
-
+/*
         binding.rv.addOnItemClickListener(object :OnItemClickListener{
             override fun onItemClicked(position: Int, view: View) {
-               position
+
             }
 
         })
-
+*/
         getAllPost()
     }
 
