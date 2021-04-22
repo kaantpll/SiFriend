@@ -45,6 +45,7 @@ class ChatAdapter(var list : ArrayList<Messages>) : RecyclerView.Adapter<ChatAda
 
     override fun getItemViewType(position: Int): Int {
         firebaseUser = FirebaseAuth.getInstance().currentUser
+
         return if (list[position].messageId == firebaseUser!!.uid) {
             MESSAGE_TYPE_RIGHT
         } else {

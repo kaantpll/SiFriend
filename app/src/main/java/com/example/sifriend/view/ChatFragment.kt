@@ -12,6 +12,8 @@ import com.example.sifriend.model.Messages
 import com.example.sifriend.model.Post
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_edit_profile.*
@@ -24,7 +26,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
     private var db : FirebaseFirestore? = FirebaseFirestore.getInstance()
     private var auth : FirebaseAuth? = FirebaseAuth.getInstance()
     private var user = auth?.currentUser
-
+    private var realtimeDatabase : FirebaseDatabase? = FirebaseDatabase.getInstance()
     var messageList = ArrayList<Messages>()
     private var adapter = ChatAdapter(arrayListOf())
 
@@ -40,13 +42,16 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
 
         bind.chatSendMessage.setOnClickListener {
             val messageText = enterMessage.text.toString()
-            sendMessageFun(messageText) }
+            //sendMessageFun(messageText)
 
-        getMessages()
+        }
+
+        //getMessages()
 
     }
 
-    private fun getMessages() {
+   /* private fun getMessages() {
+
         db?.collection("Message")?.orderBy("messageOwn",Query.Direction.DESCENDING)?.addSnapshotListener { snapshot, e ->
             if(e != null){
                 Snackbar.make(requireView(),"Error",2000).show()
@@ -68,11 +73,11 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
                 }
             }
         }
-    }
+    }*/
 
     private fun sendMessageFun(messageText : String) {
-
-        val myMessage = Messages(messageText,"asddsa","2")
+/*
+        val myMessage = Messages(messageText,"asddsa",user!!.uid)
 
         db?.collection("Message")?.add(myMessage)?.addOnCompleteListener { task->
             if(task.isSuccessful){
@@ -80,6 +85,6 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
             }
         }?.addOnFailureListener { e->
             Snackbar.make(requireView(),"Hata",2000).show()
-        }
+        }*/
     }
 }

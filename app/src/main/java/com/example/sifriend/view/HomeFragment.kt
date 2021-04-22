@@ -15,6 +15,7 @@ import com.example.sifriend.utils.OnItemClickListener
 import com.example.sifriend.utils.addOnItemClickListener
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -23,12 +24,12 @@ class HomeFragment : Fragment(R.layout.fragment_home){
 
     private var fragmentBinding : FragmentHomeBinding? =null
     private var mAuth : FirebaseAuth = FirebaseAuth.getInstance()
+    private var user : FirebaseUser? =mAuth.currentUser
     private var db : FirebaseFirestore = FirebaseFirestore.getInstance()
     var postList = ArrayList<Post>()
     private  var adapter = HomeAdapter(arrayListOf())
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         val binding = FragmentHomeBinding.bind(view)
         fragmentBinding = binding
@@ -43,6 +44,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
 
         })
 */
+      Toast.makeText(requireContext(),"id : ${user?.uid}",Toast.LENGTH_SHORT).show()
         getAllPost()
     }
 
