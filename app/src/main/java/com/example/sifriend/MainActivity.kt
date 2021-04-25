@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       /* if(user !=  null){
+        if(user !=  null){
             val intent = Intent(this,FeedActivity::class.java)
             startActivity(intent)
             finish()
-        }*/
+        }
 
         var userID = user?.uid
 

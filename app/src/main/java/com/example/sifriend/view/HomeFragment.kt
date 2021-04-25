@@ -32,8 +32,6 @@ class HomeFragment : Fragment(R.layout.fragment_home){
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
         binding.rv.adapter = adapter
 
-
-
         getAllPost()
     }
 
