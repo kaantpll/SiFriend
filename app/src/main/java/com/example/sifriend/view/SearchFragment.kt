@@ -56,17 +56,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             searchRv.adapter = adapter
             adapter.notifyDataSetChanged()
         }
-/*
-    override fun onStart() {
-        super.onStart()
-        adapter!!.startListening()
-    }
 
-    override fun onStop() {
-        super.onStop()
-        if (adapter != null) {
-            adapter!!.stopListening()
-        }
-    }*/
+
     }
 }
