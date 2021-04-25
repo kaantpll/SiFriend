@@ -9,11 +9,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import com.example.sifriend.view.FavoriteFragment
-import com.example.sifriend.view.FireFragment
-import com.example.sifriend.view.HomeFragment
-import com.example.sifriend.view.SearchFragment
+import com.example.sifriend.view.*
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
@@ -31,11 +29,9 @@ class FeedActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.addPostMenu){
-            Toast.makeText(this,"Tıklandi",Toast.LENGTH_SHORT).show()
-            val intentGotoAddPage = Intent(this,AddActivity::class.java)
-            startActivity(intentGotoAddPage)
+            val intent = Intent(this,AddActivity::class.java)
+            startActivity(intent)
         }
-
         return true
     }
     override fun onCreate(savedInstanceState: Bundle?) {

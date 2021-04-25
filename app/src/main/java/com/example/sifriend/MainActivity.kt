@@ -14,6 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.HashMap
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
     private var mAuth : FirebaseAuth = FirebaseAuth.getInstance()
@@ -24,10 +25,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if(user !=  null){
+       /* if(user !=  null){
             val intent = Intent(this,FeedActivity::class.java)
             startActivity(intent)
-        }
+            finish()
+        }*/
+
+        var userID = user?.uid
 
         signInBtn.setOnClickListener {
             var email = email_text.text.toString()
@@ -40,7 +44,9 @@ class MainActivity : AppCompatActivity() {
             var password = password_text.text.toString()
             var nickname = nicknameText.text.toString()
             var age = age_text.text.toString()
-            SignUp(email,password,nickname,age)
+            if (userID != null) {
+                SignUp(email,password,nickname,age,userID)
+            }
         }
     }
     fun SignIn(email:String, password:String)
@@ -53,13 +59,13 @@ class MainActivity : AppCompatActivity() {
         }.addOnFailureListener { e->Toast.makeText(this,e.message.toString(),Toast.LENGTH_LONG).show() }
 
     }
-    fun SignUp(email:String,password:String,nickName : String,age:String)
+    fun SignUp(email:String,password:String,nickName : String,age:String,userId:String)
     {
      mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task->
          if(task.isSuccessful){
              Toast.makeText(this,"Başarılı",Toast.LENGTH_LONG).show()
 
-             saveDatabase(email,password,nickName,age)
+             saveDatabase(email,password,nickName,age,userId)
 
          }
 
@@ -71,14 +77,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun saveDatabase(userEmail: String, userPassword: String,nickname:String,age:String) {
+    private fun saveDatabase(userEmail: String, userPassword: String,nickname:String,age:String,userId:String) {
 
         val city = hashMapOf(
                 "email" to userEmail,
                 "password" to userPassword,
                 "nickname" to nickname,
                 "age" to age,
-                "registerDate" to Timestamp(Date())
+                "registerDate" to Timestamp(Date()),
+                "userId" to userId
         )
 
         db.collection("users")

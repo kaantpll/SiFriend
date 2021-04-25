@@ -6,4 +6,5 @@ data class Post(
         var name : String,
         var imageUrl : String,
         var reason : String,
+        var postId : String,
 )

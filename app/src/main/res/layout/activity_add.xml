@@ -76,5 +76,4 @@
         app:layout_constraintStart_toStartOf="@+id/reasonText"
         app:layout_constraintTop_toBottomOf="@+id/reasonText" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,6 +36,7 @@ class HomeAdapter(var list : ArrayList<Post>): RecyclerView.Adapter<HomeAdapter.
         }
         holder.view.sendMessage.setOnClickListener {
             val intent = Intent(it.context,ChatActivity::class.java)
+            intent.putExtra("data",list[position].postId)
             it.context.startActivity(intent)
         }
 
